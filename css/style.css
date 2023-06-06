@@ -1,0 +1,153 @@
+header{
+    background-image: url('/assets/icon/fond_header.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+header .divLogo{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.divRechercher{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divRechercher h1 {
+    color: white;
+    font-size: 44px;
+    color: #FFD15B;
+    text-align: center;
+}
+
+.divRechercher .formRechercher .searchRechercherRecette {
+    width: 954px;
+    height: 72px;
+}
+.divRechercher .formRechercher .btnRechercher {
+    background: black;
+    width: 51px;
+    height: 52px;
+    border-radius: 10px;
+    position: relative;
+    right: 6.5%;
+    top: 18px;
+    
+
+    background: url('/assets/icon/loupe.svg');
+}
+.divRechercher .formRechercher .searchRechercherRecette::placeholder{
+    color: grey;
+    font-size: 16px;
+}
+
+
+main{
+    background-color: lightgrey;
+}
+
+.sectionOptions{
+    padding: 20px 102px 0px 134px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.divOptions{
+    display: flex;
+    gap: 66px;
+}
+
+.divOptions .searchOption{
+    width: 195px;
+    height: 56px;
+    padding-left: 17px;
+    border-radius: 11px;
+    border: none;
+}
+
+.sectionCardRecettes{
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-gap: 30px;
+    gap: 20px;
+    padding-top: 80px;
+    margin-left: 100px;
+}
+
+.sectionCardRecettes img{
+    width: 50px;
+    height: 50px;
+}
+
+.cardRecette{
+    width: 380px;
+    height: 731px;
+    background-color: white;
+    color: black;
+    border-radius: 21px;
+    text-decoration: none;
+}
+
+.cardRecette img{
+    width: 380px;
+    height: 253px;
+    border-radius: 21px 21px 0 0;
+    background-position: center;
+}
+
+.cardRecette article .divCardPosition{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 61px;
+}
+
+.cardRecette article .divCardPosition .pRecette{
+    height: 76px;
+    overflow: hidden;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.cardRecette h2{
+    color: black;
+    font-size: 18px;
+    line-height: 27px;
+
+}
+
+.cardRecette h3{
+    color: grey;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.cardRecette h4{
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 0;
+}
+
+.cardRecette .divIngredients{
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(3, 80px);
+
+}
+
+.cardRecette .divIngredients p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #7A7A7A;
+    margin-top: 1px;
+}

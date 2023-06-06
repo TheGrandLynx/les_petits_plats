@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg" href="assets/icon/logo.svg">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Les petits plats | page de recherche</title>
+  </head>
+  <body>
+    <header tabindex="0" role="banner" aria-label="En-tête de la page">
+        <a href="index.html" >
+            <div class="divLogo">
+                    <img src="assets/icon/logo.svg" class="logo" alt="Logo les petits plats">
+                    <img src="assets/icon/logo_round.svg" alt="">                    
+            </div>
+        </a>
+
+        <div class="divRechercher">
+            <h1>
+                CHERCHEZ PARMI PLUS DE 1500 RECETTES<br>
+                DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
+            </h1>
+            <form class="formRechercher" method="GET" action="">
+                <input type="search" class="searchRechercherRecette" placeholder="Rechercher une recette, un ingrédient, ...">
+                <button type="submit" class="btnRechercher"></button>
+            </form>
+        </div>
+    </header>
+    <main id="main" role="main" aria-label="Contenu de la page principale de la page de recherche">
+        <section class="sectionOptions">
+            <div class="divOptions">
+                <input type="search" class="searchOption" placeholder="Ingrédients">
+                <input type="search" class="searchOption" placeholder="Appareils">
+                <input type="search" class="searchOption" placeholder="Ustensiles">
+            </div>
+            <div>
+                <p>1500 recettes</p>
+            </div> 
+        </section>
+        <section class="sectionCardRecettes">
+
+        </section>
+    </main>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/factories/recipeFactory.js"></script>
+  </body>
+</html>
