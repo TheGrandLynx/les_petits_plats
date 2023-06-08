@@ -1,6 +1,7 @@
 function rechercherRecette(){
     const searchBar = document.querySelector('.searchRechercherRecette');
     let strTexteRecherche = searchBar.value;
+    if(strTexteRecherche.length < 2 ){return;}
     strTexteRecherche = strTexteRecherche.toLowerCase();
     let articles = document.querySelectorAll('.cardRecette');
     for(i = 0; i < articles.length; i++){
