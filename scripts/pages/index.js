@@ -25,11 +25,17 @@ async function displayRecipes(currentRecipes) {
     }); 
 }
 
+function addEventListeners(){
+    const searchBar = document.querySelector('.searchRechercherRecette');
+    searchBar.addEventListener("keyup", function(){
+        rechercherRecette();
+    })
+}
+
 async function init(){
-    console.log(await getRecipes())
     const currentRecipes = await getRecipes();
-    console.log(currentRecipes)
     displayRecipes(currentRecipes);
+    addEventListeners();
 }
 
 init();

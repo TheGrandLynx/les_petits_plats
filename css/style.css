@@ -151,3 +151,7 @@ main{
     color: #7A7A7A;
     margin-top: 1px;
 }
+
+.disparition{
+    display: none;
+}
