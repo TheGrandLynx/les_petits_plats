@@ -4,7 +4,10 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/svg" href="assets/icon/logo.svg">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope&display=swap" rel="stylesheet">
     <title>Les petits plats | page de recherche</title>
   </head>
   <body>
@@ -30,20 +33,61 @@
     <main id="main" role="main" aria-label="Contenu de la page principale de la page de recherche">
         <section class="sectionOptions">
             <div class="divOptions">
-                <input type="search" class="searchOption" placeholder="Ingrédients">
-                <input type="search" class="searchOption" placeholder="Appareils">
-                <input type="search" class="searchOption" placeholder="Ustensiles">
+                <div class="divContainerOption" tabindex="0">
+                    <div class="titreOption">
+                        <p>Ingrédients</p>
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                    </div>
+                    <div class="divSearchOption">
+                        <input type="search" class="searchOption" >
+                        <img src="assets/icon/loupeOption.svg" alt="">
+                    </div>
+                    <div class="divListeOptions">
+                        <ul class="listOptions" tabindex="0"></ul>
+                    </div>
+                </div>
+                <div class="divContainerOption" tabindex="0">
+                    <div class="titreOption">
+                        <p>Appareils</p>
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                    </div>
+                    <div class="divSearchOption">
+                        <input type="search" class="searchOption" >
+                        <img src="assets/icon/loupeOption.svg" alt="">
+                    </div>
+                    <div class="divListeOptions">
+                        <ul class="listOptions" tabindex="0"></ul>
+                    </div>
+                </div>
+                <div class="divContainerOption" tabindex="0">
+                    <div class="titreOption">
+                        <p>Ustensiles</p>
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                    </div>
+                    <div class="divSearchOption">
+                        <input type="search" class="searchOption" >
+                        <img src="assets/icon/loupeOption.svg" alt="">
+                    </div>
+                    <div class="divListeOptions">
+                        <ul class="listOptions" tabindex="0"></ul>
+                    </div>
+                </div>
             </div>
             <div>
                 <p>1500 recettes</p>
             </div> 
         </section>
+        <section class="sectionTags">
+
+        </section>
         <section class="sectionCardRecettes">
 
         </section>
     </main>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/factories/recipeFactory.js"></script>
+    
     <script src="scripts/utils/search_bar.js"></script>
+    <script src="scripts/factories/recipeFactory.js"></script>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/utils/search_tag.js"></script>
   </body>
 </html>
