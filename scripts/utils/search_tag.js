@@ -164,7 +164,7 @@ function populateTagDom(globalArrayIngredient, wType){
 function addTag(wTag, wType){
     tagAffiches.push([`tag${wTag}`, `${wType}`, wTag]);
     displayTag();
-    rechercherRecette();
+    updateRecettes();
     updateListTags()
     
 }
@@ -176,7 +176,7 @@ function removeTag(wTag){
     //console.log(tagAffiches[wIndex])
     tagAffiches.splice(wIndex, 1);
     displayTag();
-    rechercherRecette();
+    updateRecettes();
     updateListTags();
 }
 

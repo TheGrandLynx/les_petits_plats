@@ -52,7 +52,7 @@ async function displayRecipes(currentRecipes) {
 function addEventListeners(){
     const searchBar = document.querySelector('.searchRechercherRecette');
     searchBar.addEventListener("keyup", function(){
-        rechercherRecette();
+        updateRecettes();
         updateListTags();
     })
 }
