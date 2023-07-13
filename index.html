@@ -11,7 +11,7 @@
     <title>Les petits plats | page de recherche</title>
   </head>
   <body>
-    <header tabindex="0" role="banner" aria-label="En-tête de la page">
+    <header tabindex="0" aria-label="En-tête de la page">
         <a href="index.html" >
             <div class="divLogo">
                     <img src="assets/icon/logo.svg" class="logo" alt="Logo les petits plats">
@@ -24,19 +24,23 @@
                 CHERCHEZ PARMI PLUS DE 1500 RECETTES<br>
                 DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
             </h1>
-            <form class="formRechercher" method="GET" action="">
+            <div>
+                
+            
                 <input type="search" class="searchRechercherRecette" placeholder="Rechercher une recette, un ingrédient, ...">
-                <button type="submit" class="btnRechercher"></button>
-            </form>
+                <img src="assets/icon/loupe.svg" alt="" class="imgRechercher">
+            </div>
+            
+            
         </div>
     </header>
-    <main id="main" role="main" aria-label="Contenu de la page principale de la page de recherche">
+    <main id="main" aria-label="Contenu de la page principale de la page de recherche">
         <section class="sectionOptions">
             <div class="divOptions">
                 <div class="divContainerOption" tabindex="0">
                     <div class="titreOption">
                         <p>Ingrédients</p>
-                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg" alt="" />
                     </div>
                     <div class="divSearchOption">
                         <input type="search" class="searchOption" >
@@ -49,7 +53,7 @@
                 <div class="divContainerOption" tabindex="0">
                     <div class="titreOption">
                         <p>Appareils</p>
-                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg" alt="" />
                     </div>
                     <div class="divSearchOption">
                         <input type="search" class="searchOption" >
@@ -62,7 +66,7 @@
                 <div class="divContainerOption" tabindex="0">
                     <div class="titreOption">
                         <p>Ustensiles</p>
-                        <img class="imgRotate" src="./assets/icon/chevronDown.svg"  />
+                        <img class="imgRotate" src="./assets/icon/chevronDown.svg" alt="" />
                     </div>
                     <div class="divSearchOption">
                         <input type="search" class="searchOption" >
@@ -81,7 +85,9 @@
 
         </section>
         <section class="sectionCardRecettes">
-
+            <p class="pRecetteAucune disparition">
+                Aucune recette ne contient 'XXX'
+            </p>
         </section>
     </main>
     

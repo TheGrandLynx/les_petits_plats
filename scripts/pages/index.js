@@ -1,9 +1,10 @@
 let  currentRecipes;
+//fonction pour récupérer les données de recettes contenues dans le fichier json
 async function getRecipes() {
     
     const promesse = await fetch('/data/recipes.json');
     const wRecipes = await promesse.json();
-    //const photographers = wPhotographers['photographers'];
+    //on ajoute dans les données les champs qui seront recherchés en minuscule
     wRecipes.forEach(recipe => {
         recipe.nameMin = recipe.name.toLowerCase()
         recipe.ingredientsMin = recipe.ingredients.map(function(wIngredient) {
@@ -18,22 +19,16 @@ async function getRecipes() {
         recipe.descriptionMin = recipe.description.toLowerCase();
         recipe.applianceMin = recipe.appliance.toLowerCase();
     })
-    console.log(wRecipes)
-    //console.log({wRecipes: [...wRecipes]})
     return (wRecipes)
-
-    //const wRecipes = recipes.json();
-    
-    //return ({wRecipes: [...wRecipes]})
 }
 
+//afficher les éléments DOM en fonction des données du fichier json
 async function displayRecipes(currentRecipes) {
-    //console.log(currentRecipes)
     const sectionRecipes = document.querySelector(".sectionCardRecettes");
-    const wRecipesFactory = recipeFactory(currentRecipes);
     let globalArrayIngredient = [];
     let globalArrayUstensils = [];
     let globalArrayAppliance = [];
+    //pour chaque recette récupérée, on crée sa card et on récupère ingrédients, ustensiles et appareils
      currentRecipes.forEach((recipe) => {
         const recipeModel = recipeFactory(recipe);
         const recipeCardDOM = recipeModel.getRecipeCardDOM();
@@ -42,23 +37,21 @@ async function displayRecipes(currentRecipes) {
         globalArrayUstensils.push(recipeModel.getTagsUstensils());
         globalArrayAppliance.push(recipeModel.getTagsAppliance());
     }); 
-    populateIngredientList(globalArrayIngredient, 'Ingrédients');
-    populateIngredientList(globalArrayUstensils, 'Ustensiles');
-    populateIngredientList(globalArrayAppliance, 'Appareils');
-    //console.log(globalArrayIngredient)
+    populateTagList(globalArrayIngredient, 'Ingredients');
+    populateTagList(globalArrayUstensils, 'Ustensiles');
+    populateTagList(globalArrayAppliance, 'Appareils');
     populateTagDom(globalArrayIngredient);
 }
 
+//ajout du listener sur la barre de recherche
 function addEventListeners(){
     const searchBar = document.querySelector('.searchRechercherRecette');
     searchBar.addEventListener("keyup", function(){
-        rechercherRecette();
+        updateRecettes();
         updateListTags();
     })
 }
-function test2(){
-    rechercherRecette();
-}
+
 async function init(){
     currentRecipes = await getRecipes();
     displayRecipes(currentRecipes);

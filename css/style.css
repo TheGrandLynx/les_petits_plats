@@ -36,26 +36,28 @@ header .divLogo{
     font-family: 'Anton', sans-serif;
 }
 
-.divRechercher .formRechercher .searchRechercherRecette {
+.divRechercher > div {
+    display: flex;
+    background-color: white;
+    align-items: center;
+}
+
+.searchRechercherRecette {
     width: 954px;
     height: 72px;
     border-radius: 5px;
     border: none;
+    outline: none;
     padding-left: 30px;
 }
-.divRechercher .formRechercher .btnRechercher {
+.imgRechercher {
     background: black;
     width: 51px;
     height: 52px;
     border-radius: 10px;
-    position: relative;
-    right: 6.5%;
-    top: 18px;
-    
-
-    background: url('/assets/icon/loupe.svg');
+    margin-right: 10px;
 }
-.divRechercher .formRechercher .searchRechercherRecette::placeholder{
+.divRechercher .searchRechercherRecette::placeholder{
     color: grey;
     font-size: 16px;
 }
@@ -64,7 +66,6 @@ header .divLogo{
 main{
     background-color: lightgrey;
 }
-
 
 
 .sectionCardRecettes{

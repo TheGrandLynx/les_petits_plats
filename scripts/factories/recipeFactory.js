@@ -1,26 +1,8 @@
+
 function recipeFactory(data) {
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = data;
     const picture = `assets/images/${image}`;
-    /* let ingredientsMin;
-    let ustensilsMin;
-    let descriptionMin;
-    let applianceMin;
-    if(image != undefined){
-    console.log(picture)
-        let nameMin = name.toLowerCase();
-        console.log(ingredients)
-        ingredientsMin = ingredients.map(function(wIngredient) {
-            return {
-                "ingredient": wIngredient.ingredient.toLowerCase(),
-                "quantity": wIngredient.quantity,
-                "unit": wIngredient.unit
-                };
-            
-          });
-        ustensilsMin = ustensils.map(wUstensils => wUstensils.toLowerCase())
-        descriptionMin = description.toLowerCase();
-        applianceMin = appliance.toLowerCase();
-    } */
+    //Création des cards en fonction des données reçues depuis le fichier json
     function getRecipeCardDOM() {
         const link = document.createElement('a');
         link.href = "#" ;
@@ -69,7 +51,7 @@ function recipeFactory(data) {
         link.appendChild(article);
         return (link);
     }
-
+    //la fonction renvoie un tableau de la liste des ingrédients
     function getTagsIngredients(){
         let arrayIngredient = [];
         ingredients.forEach(wIngredient => { 
@@ -77,6 +59,7 @@ function recipeFactory(data) {
         });
         return(arrayIngredient);
     }
+    //la fonction renvoie un tableau de la liste des ustensiles
     function getTagsUstensils(){
         let arrayUstensils = [];
         ustensils.forEach(wUstensils => { 
@@ -84,6 +67,7 @@ function recipeFactory(data) {
         });
         return(arrayUstensils);
     }
+    //la fonction renvoie un tableau de la liste des appareils
     function getTagsAppliance(){
         let arrayAppliance = [];
             arrayAppliance.push(appliance)
