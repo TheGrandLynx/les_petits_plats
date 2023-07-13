@@ -5,20 +5,19 @@ function rechercherRecette(){
     const searchBar = document.querySelector('.searchRechercherRecette');
     let strTexteRecherche = searchBar.value;
     strTexteRecherche = strTexteRecherche.toLowerCase();
-    arrayRecettesAffiches.length = 0;
-
-    
-    console.log(currentRecipes)
-    for(t=0; t < currentRecipes.length ; t++){
-        strTitle = currentRecipes[t].nameMin;
-        strDescription = currentRecipes[t].descriptionMin;
-        strIngredients = currentRecipes[t].ingredientsMin;
-        if(strTitle.includes(strTexteRecherche) || strDescription.includes(strTexteRecherche) || isIncludedIn(strTexteRecherche, strIngredients)){
-            arrayRecettesAffiches.push(currentRecipes[t])
+    let wArrayRecettesAffiches = [];
+    if(strTexteRecherche.length > 2){
+        for(t=0; t < arrayRecettesAffiches.length ; t++){
+            strTitle = arrayRecettesAffiches[t].nameMin;
+            strDescription = arrayRecettesAffiches[t].descriptionMin;
+            strIngredients = arrayRecettesAffiches[t].ingredientsMin;
+            if(strTitle.includes(strTexteRecherche) || strDescription.includes(strTexteRecherche) || isIncludedIn(strTexteRecherche, strIngredients, true)){
+                
+                wArrayRecettesAffiches.push(arrayRecettesAffiches[t]);
+            }
         }
-
-    }
-    console.log(arrayRecettesAffiches)
+        arrayRecettesAffiches = wArrayRecettesAffiches;
+        }
         noRecipe(strTexteRecherche);
 }
 
