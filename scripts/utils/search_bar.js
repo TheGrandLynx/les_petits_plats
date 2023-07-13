@@ -8,7 +8,7 @@ function rechercherRecette(){
     if(strTexteRecherche.length > 2){
         arrayRecettesAffiches = arrayRecettesAffiches.filter(recette => recette["nameMin"].includes(strTexteRecherche)
                                                                  || recette["descriptionMin"].includes(strTexteRecherche)
-                                                                 || isIncludedIn(strTexteRecherche, recette["ingredientsMin"], true))
+                                                                 || isIncludedIn(strTexteRecherche, recette["ingredientsMin"].map(ing => ing.ingredient), true))
         
         
         }
@@ -54,27 +54,15 @@ function rechercherRecetteTag(){
 
 //rechercher si le texte tapé est présent dans les ingrédients d la recette
 function isIncludedIn(wStringToSearch, wTab, isIngredient){
-    for(j = 0; j < wTab.length; j++){
-        if(isIngredient){
-            if(wTab[j].ingredient.includes(wStringToSearch)){
-                return true;
-            }
-        }
-        else{
-            if(wTab[j].includes(wStringToSearch)){
-                return true;
-            }
-        }
-        }   
-    }
-
-    /* function isIncludedIn(wStringToSearch, wTab, isIngredient){
-                wTab.map(ing => ing.ingredient).forEach(ingredient => {
-                    if(ingredient.includes(wStringToSearch)){
-                    console.log(ingredient)
+                wTab = wTab.some(function(v){
+                    return v.includes(wStringToSearch);
+                })
+                if(wTab){
                     return true;
-                }})
-        } */
+                }else{
+                    return false;
+                }
+        }
 
 function tagIncluded(wTag, wTab){
     for(t = 0; t < wTab.length; t++){
