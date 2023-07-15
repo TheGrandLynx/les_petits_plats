@@ -50,6 +50,9 @@ header .divLogo{
     outline: none;
     padding-left: 30px;
 }
+
+
+
 .imgRechercher {
     background: black;
     width: 51px;
@@ -323,4 +326,50 @@ li:hover{
 
 .divTag img{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .searchRechercherRecette{
+        width: 90%;
+    }
+
+    .sectionCardRecettes{
+        position: relative;
+        top: 250px;
+        grid-template-columns: repeat(1, 400px);
+        margin-left: 10%;
+    }
+
+    .cardRecette, .cardRecette div:first-child {
+        width: 300px;
+    }
+    .cardRecette img{
+        width: 100%;
+    }
+    .cardRecette span{
+        left: 60%;
+    }
+
+    .divContainerOption{
+        position: absolute;
+        left: 70px;
+        top: 520px;
+        z-index: 1003;
+    }
+    .divContainerOption:nth-child(2){
+        left: 70px;
+        top: 580px;
+        z-index: 1001;
+    }
+    .divContainerOption:nth-child(3){
+        left: 70px;
+        top: 640px;
+        z-index: 1000;
+    }
+    .sectionTags{
+        position: relative;
+        top: 250px;
+        margin-left: 10%;
+    }
 }
